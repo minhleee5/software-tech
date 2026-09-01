@@ -1,0 +1,16 @@
+Part A
+1. Data to record:
+- Patient name
+- Practitioner name
+- Appointment time
+
+2. Functions
+- Automatically record patient name, practitioner name and appointment time for each appointment
+- Search button
+- Download button
+
+3. What could go wrong
+- Wrong details
+- Invalid input (e.g invalid characters,...)
+
+4. Unclear requirements
