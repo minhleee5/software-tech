@@ -1,42 +1,42 @@
 Activity 1
-- Checking to see if the generated code is correct and followed the requirements, or the code has any errors
-- Figuring out what is the requirements, what does the program solves
+- Checking to see if the generated code is correct and follows the requirements, or if the code has any errors
+- Figuring out what the requirements, what the program solves
 - Maintaining the system, upgrading or debugging when needed
 
 Activity 2
 - Scenario A
     + Programming: Yes
     + Software engineering: No
-    + Why?: Because the student is just coding, there is no communication between stakeholders, no analysis, nor does it provide scalability in the real world
+    + Why?: Because the student is just coding; there is no communication between stakeholders, no analysis, nor does it provide scalability in the real world
 - Scenario B
     + Programming?: Yes
     + Software engineering?: Yes
-    + Why?: Because building a payroll that actually used by 5,000 employees involved deep analysis and planning between each stakeholders to successfully pull that off. The team must handle security, data privacy, testing and other stuff.
+    + Why?: Because building a payroll that is actually used by 5,000 employees involved deep analysis and planning between each stakeholder to successfully pull that off. The team must handle security, data privacy, testing, and other stuff.
 - Scenario C
     + Programming?: Yes
     + Software engineering?: No
-    + Why?: Because a single prompt can not do everything a actual software needs, like a database to hold the appointment records, or a security feature that protects patient details
+    + Why?: Because a single prompt can not do everything an actual software needs, like a database to hold the appointment records, or a security feature that protects patient details
 
 Activity 3
 Task 1
 - Stakeholder
-    + Patients: Checking their old appointments record online, with no waiting time
+    + Patients: Checking their old appointment records online, with no waiting time
     + Practitioners: Faster way to check patient's old appointments to see if they have improved from the previous appointments
-    + Receptionists: Easier and faster way to enter new appointments details
+    + Receptionists: Easier and faster way to enter new appointment details
     + Clinic managers: More efficient way to track their business, based on how many appointments were made in a month
 
 Task 2
 - Too inefficient to document new appointments
-- Checking old appointments take too long because user has to goes through every single files
-- Documents can be destroyed if something happened: a fire broke out or a disaster
+- Checking old appointments takes too long because the user has to go through every single file
+- Documents can be destroyed if something happens: a fire breaks out or a disaster
 - No data privacy
 
 Task 3
-- Who should has authority to add and modify patient's record?
-- How far the appointment can be in advanced can patients book?
+- Who should have authority to add and modify a patient's record?
+- How far the appointment can be in advance can patients book?
 - What details can patients check when going through their old records?
-- Where can the system back up the data incase something goes wrong?
-- What details must be on patient's record?
+- Where can the system back up the data in case something goes wrong?
+- What details must be on a patient's record?
 
 Activity 4
 - Appointment management
@@ -47,20 +47,20 @@ Activity 4
     + Client evidence?: No
     + In scope?: No
     + Decision?: Reject
-- AI diagnosed recommendations:
+- AI-diagnosed recommendations:
     + Client evidence?: No
     + In scope?: No
     + Decision?: Reject
 - Patient search:
     + Client evidence?: Yes
-    + In scope?: yes
+    + In scope?: Yes
     + Decision?: Include
 - Online payment:
     + Client evidence?: No
     + In scope?: No
     + Decision?: Reject
 - Practitioner schedule view:
-    + Client evidence?: yes
+    + Client evidence?: Yes
     + In scope?: Yes
     + Decision?: Include
 - Insurance processing:

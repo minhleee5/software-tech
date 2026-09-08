@@ -1,0 +1,11 @@
+1. Problem summary
+A community clinic, SmartCare, still records the patient's old appointment on spreadsheets and paper records manually by hand. This process is too inconvenient and inefficient when it comes to searching old records and updating details, as it means receptionists have to go through those paper files and look for them. Not to mention, there are no data privacy measures, as records are usually stored in one place and can be stolen. So they reached out to a team of software engineers to ask them to make a new system where every detail can be store online, easier to find, and easier to update.
+
+2. Initial stakeholders
+    + Patients: Checking their old appointment records online, with no waiting time
+    + Practitioners: Faster way to check patient's old appointments to see if they have improved from the previous appointments
+    + Receptionists: Easier and faster way to enter new appointment details
+    + Clinic managers: More efficient way to track their business, based on how many appointments were made in a month
+
+3. Initial features
+-

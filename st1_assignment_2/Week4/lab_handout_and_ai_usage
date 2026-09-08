@@ -5,7 +5,7 @@ Part A
 - Appointment time
 
 2. Functions
-- Automatically record patient name, practitioner name and appointment time for each appointment
+- Automatically record patient name, practitioner name, and appointment time for each appointment
 - Search button
 - Download button
 
@@ -18,19 +18,19 @@ Part A
 Part B
 5. Limitation:
 - Program 1:
-    + Logical error: Appointments details can be empty and the script still returns an answer
-    + Logical error: Patient name and practitioner can be a number and the script still returns an answer despite it is not a valid name for a normal human being
-    + If there are many appointments, users will have a hard time finding it because the script returns every single appointments
-    + The person who manage the database will have a hard time putting in new appointments because there are not inputs and they have to type it by hand into the script
-    + Incase there are some details wrong in a certain appointment, the person who manage the database will have to find that specific appointment by hand, which is time consuming
+    + Logical error: Appointment details can be empty, and the script still returns an answer
+    + Logical error: Patient name and practitioner can be a number, and the script still returns an answer despite it not being a valid name for a normal human being
+    + If there are many appointments, users will have a hard time finding it because the script returns every single appointment
+    + The person who manages the database will have a hard time putting in new appointments because there are no inputs, and they have to type it by hand into the script
+    + In case there are some details wrong in a certain appointment, the person who manages the database will have to find that specific appointment by hand, which is time-consuming
 
 - Program 2:
-    + The practitioner name can be empty because the script does not check for practitioner name if it is empty or not, same with appointment time
-    + Users can not input different appointments as it is limited to 2 given appointments
-    + If there are many appointments, users will have a hard time finding it because the script returns every single appointments
-    + The person who manage the database will have a hard time putting in new appointments because there are not inputs and they have to type it by hand into the script
-    + Incase there are some details wrong in a certain appointment, the person who manage the database will have to find that specific appointment by hand and update the details, which is time consuming
-    + There are nothing that indicates how many appointments there are, so we will have to count it by hand or write a new program
+    + The practitioner name can be empty because the script does not check whether the practitioner name is empty or not; same with appointment time
+    + Users can not input different appointments, as it is limited to 2 given appointments
+    + If there are many appointments, users will have a hard time finding it because the script returns every single appointment
+    + The person who manages the database will have a hard time putting in new appointments because there are no inputs, and they have to type it by hand into the script
+    + In case there are some details wrong in a certain appointment, the person who manages the database will have to find that specific appointment by hand and update the details, which is time-consuming
+    + There is nothing that indicates how many appointments there are, so we will have to count them by hand or write a new program
 
 Part C
 1. Code Explanation
@@ -50,15 +50,15 @@ Part C
 
 4. Check Your Understanding
     - Question 1: What happens if book_appointment("", "Dr. Smith", "10:00 AM") is called, and why?
-    - Answer, the script will returns ValueError, because there is a input validation for patient name
+    - Answer: The script will return ValueError because there is input validation for the patient name
     - Question 2: Why do we use a dictionary inside the appointments list instead of a plain list of strings?
-    - Answer: because using dictionary allows the system to store data values as key:value pairs
+    - Answer: Because using a dictionary allows the system to store data values as key:value pairs
 
 Part F:
 - No error
 - ValueError
 - No error
-- No error, if "None" as in a word in the patient name, ValueError if 'None' as in empty
+- No error, if "None" as in a word in the patient name; ValueError if 'None' as in empty
 
 Part G:
-- Input validation for practitoner name and appointment time, just like how it is done patient name
+- Input validation for practitioner name and appointment time, just like how it is done for the patient name

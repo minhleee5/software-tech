@@ -1,4 +1,4 @@
-1. I added 'input' function to the sample so users can add new appointment details, but I used the sample version for other parts
+1. I added an 'input' function to the sample so users can add new appointment details, but I used the sample version for other parts
 2. Yes, variables like book_appointments,...
 3. Yes
 4. I ran it, and it returned the correct answer according to the sample provided by AI
