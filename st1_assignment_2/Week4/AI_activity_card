@@ -8,4 +8,25 @@ A community clinic, SmartCare, still records the patient's old appointment on sp
     + Clinic managers: More efficient way to track their business, based on how many appointments were made in a month
 
 3. Initial features
--
+a. Spreadsheet to PDF converter
+- Provisional
+- Because manually enter patient record will take a lot of time and manpower
+b. Record manager (entering, modifying, searching)
+- Confirmed
+- Mentioned in customer needs
+c. Record search bar (for patient)
+- Provisional
+- Customer may need to look up their old records without having to go to clinic
+d. Appointment scheduler
+- Provisional
+- Convenient for customer as they won't need to go to the clinic to schedule their next appointment
+
+4. Questions for clients
+- Which roles will be in charge of taking care the documents?
+- What details should be included in each records?
+- Are there any additional options you want to include in the software?
+- How much records should be displayed in one page?
+- Do you want to include a function that send the PDF to a connected printer?
+
+5. What we do not yet know
+- 
