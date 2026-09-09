@@ -1,0 +1,23 @@
+Part A:
+The old method of storing records is too inefficient, so the manager wants a system to easily manage patient records
+
+Part B:
+a. Stakeholders
+- Patient
+- Practitioner
+- Manager
+- Staff
+b. In scope:
+- Managing patient infos, records, appointments (Confirmed)
+- Upgrading appointment records storage (Confirmed)
+- Removing duplicated records (Confirmed)
+- Appointment scheduler (Provisional)
+c. Out of scope
+- Online payment method
+- Download old records
+
+Part C.
+FR-01: Search for patient information: User should be able to see a search bar asking for the patient name, after inputting, the software will show the patient details
+FR-02: Search for practitioner information: Upon searching, the software will show the practitioner details: Name, Age, phone number,...
+FR-03: Search for old appointment: User will input their name in the search bar, and the software will show a lists of that patient appointment, containing details like appointment date, who was in charge of that appointment, etc
+FR-04: Add
