@@ -20,4 +20,14 @@ Part C.
 FR-01: Search for patient information: User should be able to see a search bar asking for the patient name, after inputting, the software will show the patient details
 FR-02: Search for practitioner information: Upon searching, the software will show the practitioner details: Name, Age, phone number,...
 FR-03: Search for old appointment: User will input their name in the search bar, and the software will show a lists of that patient appointment, containing details like appointment date, who was in charge of that appointment, etc
-FR-04: Add
+FR-04: Add/Modify details to appointment record: User can choose a specific record, and fill in what need to be update/add
+FR-05: Delete appointment record: User can select 1 or more appointment record and delete them
+FR-06: New appointment schedule: User will have an option to set new appointment and fill in these details: Name, age, data, health problem(s), practitioner (optional)
+FR-07: Cancel scheduled appointment: User can check their scheduled appointment and cancel them
+FR-08: Update/add patient or practitioner details: User can search up patient/practitioner profile and change details as needed
+
+Part D.
+- Backup records
+- Update software
+- Troubleshoot and repair software
+- 
