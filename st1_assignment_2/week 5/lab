@@ -1,22 +1,24 @@
-Part A:
-The old method of storing records is too inefficient, so the manager wants a system to easily manage patient records
+1. Problem
+a. The old method of storing records is too inefficient, so the manager wants a system to easily manage patient records
 
-Part B:
-a. Stakeholders
-- Patient
-- Practitioner
-- Manager
-- Staff
 b. In scope:
 - Managing patient infos, records, appointments (Confirmed)
 - Upgrading appointment records storage (Confirmed)
 - Removing duplicated records (Confirmed)
 - Appointment scheduler (Provisional)
+
 c. Out of scope
 - Online payment method
 - Download old records
 
-Part C.
+2. Stakeholders
+- Patient (Need: Book appointment without conflicting other appointment; Evidence: duplicate appointment bookings)
+- Practitioner (Need: Know if the appointment is canceled or not; Evidence: Inconsistent appointment status information)
+- Manager: (Need: Reliability in appointment history; Evidence: Lack of reliable appointment history)
+- Receptionist (Need: Able to locate and view the detail of the appointment accurately; Evidence: difficulty locating patient records)
+
+
+3. Functional requirements
 FR-01: Search for patient information: User should be able to see a search bar asking for the patient name, after inputting, the software will show the patient details
 FR-02: Search for practitioner information: Upon searching, the software will show the practitioner details: Name, Age, phone number,...
 FR-03: Search for old appointment: User will input their name in the search bar, and the software will show a lists of that patient appointment, containing details like appointment date, who was in charge of that appointment, etc
@@ -26,13 +28,20 @@ FR-06: New appointment schedule: User will have an option to set new appointment
 FR-07: Cancel scheduled appointment: User can check their scheduled appointment and cancel them
 FR-08: Update/add patient or practitioner details: User can search up patient/practitioner profile and change details as needed
 
-Part D.
-- Backup records
-- Update software
-- Troubleshoot and repair software
-- Option to temporary shutdown the server safely
+4. Non-functional requirements
+NFR-01: Backup records
+NFR-02: Update software
+NFR-03: Troubleshoot and repair software
+NFR-04:Option to temporary shutdown the server safely
 
-Part E.
+5. User story
+US-01: As a receptionist, I want to look up patient records accurately, so that I can make a report
+US-02: As a receptionist, I want to add and modify records, so that I can change details when a customer requested
+US-03: As a practitioner, I want to know the status of the next appointment accurately, so that I can prepare before hand and not waste my time
+US-04: As a customer, I want to book an appointment without conflicting any other appointments, so that I do not have to wait or worse, go back home and book another appointment
+US-05: As a manager, I want to produce an operational report, so that I can present them to my boss
+
+6. Acceptance criteria
 1. Given: the receptionist in the log in menu to the system
 When: the receptionist try to enter their details
 Then: the system fail to log the receptionist in due to unstable connection
@@ -49,7 +58,7 @@ Then: the system stores the data of the booked appointment and send it to practi
 When: Customer canceled the appointment
 Then: the system update the status of the appointment and notify the practitioner, receptionist and customer
 
-Part F.
+7. Assumptions and Open questions
 Act as a software requirements reviewer to review the SmartCare requirements for ambiguity, inconsistency, missing clarification questions, and testability.
 
 Rule: Every suggestion is explicitly tagged based on evidence from the client brief or as a question/assumption needing client validation.
@@ -90,7 +99,7 @@ Suggestion: Clarify whether existing paper/spreadsheet patient data must be impo
 
 Classification: Question/Assumption Requiring Validation (The brief notes current reliance on paper/spreadsheets, but migration scope is completely unstated).
 
-Part G.
+8. AI review
 1.a: Accepted
 Reason: It will be much easier to add or update the record later on
 
