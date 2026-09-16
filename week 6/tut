@@ -1,0 +1,53 @@
+Candidate concept
+1. Patient
+Class: Yes
+Reason: they have their own attributes and relationship with the system
+
+2. Practitioner
+Class: Yes
+Reason: they have their own attributes and relationship with the system
+
+3. Appointment
+Class: Yes
+Reason: because it has its own attributes and status
+
+4. Name
+Class: No
+Reason: because it's just an attribute that belongs inside other domain class
+
+5. Clinic
+Class: Yes
+Reason: Because it represents a business entity
+
+6. Database
+Class: No
+Reason: because database is infrastructure component
+
+7. Cancellation
+Class: No
+Reason: because it's an action/event
+
+8. Status
+Class: No
+Reason: because it's an action/event
+
+CRC Card
+1. Patient
+Responsibilities: Books an appointment; Collaborators: Appointment
+Responsibilities: Attends the appointment; Collaborators: Practitioner
+
+2. Practitioner
+Responsibilities: Checkup with the patient; Collaborators: Patient
+Responsibilities: Updates the status of the appointment; Collaborators: Appointment
+
+3. Appointment
+Responsibilities: Informs practitioner about its status; Collaborators: Practitioner
+Responsibilities: Documents the details; Collaborators: Practitioner, Patient
+
+Relationship reasoning
+- Patient to Appointment: Associate: because Patient books and attends the Appointment, but they do not own Appointment
+- Practitioner to Appointment: 1 to N: A practitioner can conducts multiple appointments, but those appointments belong to one primary Practitioner
+- Should Appointment inherit from Patient: No, because Appointment is an event, and Patient is a person, so Appointment can't inherit from Patient
+- Does clinic need to own every objects: No, because objects like Patient or Practitioner exist independently
+
+AI model critique:
