@@ -30,4 +30,81 @@ Part D.
 - Backup records
 - Update software
 - Troubleshoot and repair software
-- 
+- Option to temporary shutdown the server safely
+
+Part E.
+1. Given: the receptionist in the log in menu to the system
+When: the receptionist try to enter their details
+Then: the system fail to log the receptionist in due to unstable connection
+
+2. Given: the receptionist logged in
+When: the receptionist searched up the detail of an appointment record
+Then: the system displays the detail of that record
+
+3. Given: Customer logged in
+When: Customer booked an appointment that does not conflict with any other appointment
+Then: the system stores the data of the booked appointment and send it to practitioner, receptionist
+
+4. Given: The customer logged in
+When: Customer canceled the appointment
+Then: the system update the status of the appointment and notify the practitioner, receptionist and customer
+
+Part F.
+Act as a software requirements reviewer to review the SmartCare requirements for ambiguity, inconsistency, missing clarification questions, and testability.
+
+Rule: Every suggestion is explicitly tagged based on evidence from the client brief or as a question/assumption needing client validation.
+
+1. Review of Functional Requirements (FRs)
+
+Issue (Ambiguity & Missing Clarifications): Terms like "patient information" and "appointment history" are underspecified.
+
+Suggestion: Define exact data fields (e.g., full name, DOB, contact details, medical notes) for patient records.
+
+Classification: Question/Assumption Requiring Validation (The brief mentions difficulty finding patient information but does not specify required fields).
+
+Issue (Inconsistency & Testability): Addressing "duplicate bookings" lacks clear rules on what constitutes a duplicate (e.g., same time slot vs. same practitioner vs. same patient).
+
+Suggestion: Explicitly state validation rules preventing a practitioner or patient from having overlapping time slots.
+
+Classification: Evidence-Based (The brief explicitly cites "staff report duplicate bookings" as a current problem).
+
+2. Review of Non-Functional Requirements (NFRs)
+
+Issue (Testability): Stating management wants a "maintainable" or "small" system is vague and unmeasurable.
+
+Suggestion: Replace "small and maintainable" with measurable metrics, such as code modularity, standard deployment environments, or maximum page load times (e.g., < 2 seconds).
+
+Classification: Question/Assumption Requiring Validation (The brief asks for maintainability, but specific technical constraints or performance targets are not defined).
+
+Issue (Ambiguity - Security & Integrity): "Inconsistent appointment status" is mentioned, but data integrity rules around status changes are missing.
+
+Suggestion: Define a strict state machine for appointments (e.g., Scheduled -> Completed or Cancelled) so invalid status transitions cannot occur.
+
+Classification: Evidence-Based (The brief explicitly notes "inconsistent appointment status" in the current manual workflow).
+
+3. Review of Scope & User Stories
+
+Issue (Scope Boundaries): Legacy data migration from spreadsheets/paper records is not mentioned.
+
+Suggestion: Clarify whether existing paper/spreadsheet patient data must be imported into SmartCare or if the system starts fresh.
+
+Classification: Question/Assumption Requiring Validation (The brief notes current reliance on paper/spreadsheets, but migration scope is completely unstated).
+
+Part G.
+1.a: Accepted
+Reason: It will be much easier to add or update the record later on
+
+1.b: Accepted
+Reason: To prevent any conflicted appointment in the future
+
+2.a: Unverified
+Reason: We need to verify what does the manager mean by "small, maintainable", the AI suggestion is good, consider the manager is not good at IT, using IT terms will be difficult to explain to the manager
+
+2.b: Modified
+Reason: the suggestion made by AI is not enough, the customer might want to move the appointment to a different time, so we need more status
+
+3.a: Rejected
+Reason: It's pretty obvious that the manager wants to store existing records and new record on to the system
+
+Reflection:
+The AI mentioned that the requirements for the system made by the manager are to vague, we couldn't really understand by what "small and maintainable", considering each person perspection on "small and maintainable" is different, so we need to ask the manager more about that. An suggestion made by AI that was overreach is whether the manager wants to import existing papersheet into the system, which is quite obvious since the manager wants a system that can search up an record in seconds, so if we don't import the old records then the recptionist still have to search for the record by hand, which defeats the whole purpose of this system. The requirement that I decided to changed is how small is the system needs to be, for that one, I still have to ask the manager for clarification on his definition of "maintainable", for example, who is maintaining it, a regular person, or an IT person? The requirements must have evidences because we need to be 100% percent sure that the system we are building is what the manager really wants.
