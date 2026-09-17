@@ -51,3 +51,6 @@ Relationship reasoning
 - Does clinic need to own every objects: No, because objects like Patient or Practitioner exist independently
 
 AI model critique:
+The classes that AI proposed should not be included because:
+- It represents technical software pattern only
+- Some of them strip away attributes of the domain classes
