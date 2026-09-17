@@ -1,0 +1,33 @@
+Requirement to concept
+- Patient is confirmed as a domain class supported by FR-01 and FR-02. Its state includes patient_id, full_name, contact_info, and medical_history, while its behaviors include requesting appointments and viewing appointment history. It is accepted as a class because it represents a core domain entity with identity and an independent life cycle.
+- Practitioner is confirmed as a domain class supported by FR-02 and FR-03. Its state includes prac_id, full_name, and specialty, while its behaviors include viewing assigned appointments and setting availability schedules. It is accepted as a class because it represents a core domain entity performing clinical duties.
+- Appointment is confirmed as a domain class supported by FR-02 and FR-04. Its state includes appointment_id, date_time, and status, while its behaviors include updating status, rescheduling, and canceling. It is accepted as a class because it represents a core transaction entity managing consultation slots.
+- Name is rejected as a class based on FR-01 and FR-03. It has no independent state or behavior because it is a primitive attribute that belongs inside the Patient and Practitioner classes.
+- Clinic is rejected as a class based on system scope and boundaries. It has no operational state or behavior because it acts as an organizational boundary rather than an operational domain class.
+- Database is rejected as a class based on NFR-01. It has no domain state or behavior because it is an infrastructure and technical implementation detail.
+- Cancellation is rejected as a class based on FR-04. It has no independent state or behavior because it represents a business action or state transition method inside the Appointment class.
+- Status is rejected as a class based on FR-02 and FR-04. It has no independent state or behavior because it is a primitive attribute tracking state inside the Appointment class.
+
+CRC CARDS
+
+Patient Class Responsibilities and Collaborators:
+The Patient class is responsible for booking and requesting appointments, which requires collaboration with the Appointment class. It is also responsible for attending consultation sessions, which requires collaboration with the Practitioner class.
+
+Practitioner Class Responsibilities and Collaborators:
+The Practitioner class is responsible for conducting checkups with patients, which requires collaboration with the Patient class. It is also responsible for updating the status and schedule of appointments, which requires collaboration with the Appointment class.
+
+Appointment Class Responsibilities and Collaborators:
+The Appointment class is responsible for informing practitioners and patients of status and slot details, which requires collaboration with both the Practitioner and Patient classes. It is also responsible for tracking appointment details, status, and cancellation states, collaborating with both the Patient and Practitioner classes.
+
+UML Class diagram
+- In the directory
+
+DESIGN RATIONALE
+- Only Patient, Practitioner, and Appointment were retained as core domain classes because they represent real-world entities with persistent states and behavior. Technical elements like Database and primitive attributes like Name or Status were excluded from being classes. Operations were assigned directly to the entities that own the data: Appointment handles its own status updates and cancellations, while Patient and Practitioner manage their respective booking requests and availability.
+- Regarding relationships, Patient has a simple association with Appointment with a multiplicity of 1 to 0..*, meaning a patient can book multiple appointments, but does not own the appointment lifecycle. Practitioner has a simple association with Appointment with a multiplicity of 1 to 0..*, meaning a practitioner conducts multiple appointments, but each slot has one primary practitioner. Inheritance was rejected because an Appointment is an event while a Patient is a person. Forcing Clinic to own all objects was also rejected to prevent creating a centralized God Object.
+
+AI DESIGN REVIEW RECORD
+- The AI suggested that Patient schedules Appointment with a 1 to 0..* multiplicity based on FR-01 and FR-02. This suggestion was accepted because it accurately models the real-world business interaction and multiplicity. The model was updated to include a 1 to 0..* association line between Patient and Appointment.
+- The AI suggested creating an AppointmentManager class based on FR-02 and FR-04. This suggestion was rejected because it introduces technical software design patterns like controllers into a domain model, stripping behavior away from the core Appointment entity. No changes were made to the domain model.
+- The AI suggested creating a Notification Engine class based on FR-04. This suggestion was rejected because it represents an over-designed infrastructure utility that belongs in detailed architectural design rather than domain conceptual modeling. No changes were made to the domain model.
+

@@ -1,0 +1,104 @@
+Part A
+a. Nouns:
+- appointment bookings
+- patient records
+- appointment status information
+- cancellation processes
+- appointment history
+- basic operational reports
+b. Verbs
+- Locating
+- manages
+- producing
+- support
+c. business rules
+- manageable application suitable for a small clinic
+- replace the curren fragmented manual and spreadsheet-based processes
+- support patient, practitioner, appointment management
+
+Part B
+a. Patient
+- Supporting requirements: FR-01, FR-02
+- State: PatientID, PatientFullName, PatientContactInfo, MedicalHistory
+- Behavior: books appointments, views old appointment records
+
+b. Practitioner
+- Supporting requirements: FR-02, FR-03
+- State: PracID, PracFullName, Specialty
+- Behavior: views assigned appointments, sets availability
+
+c. Appointment
+- Supporting requirements: FR-02, FR-04
+- State: AppointmentID, Status, Date
+- Behavior updates status, reschedules, cancels, books
+
+Part C
+1. Patient
+Responsibilities: Books an appointment; Collaborators: Appointment
+Responsibilities: Attends the appointment; Collaborators: Practitioner
+
+2. Practitioner
+Responsibilities: Checkup with the patient; Collaborators: Patient
+Responsibilities: Updates the status of the appointment; Collaborators: Appointment
+
+3. Appointment
+Responsibilities: Informs practitioner about its status; Collaborators: Practitioner
+Responsibilities: Documents the details; Collaborators: Practitioner, Patient
+
+Part D
+(in the directory)
+
+Part E
+AI Design Review
+- Proposed Classes & AttributesPatient Class [FR-1, FR-2]
+- Attributes: patientID, fullName, contactInfoPractitioner Class [FR-2, FR-3]
+- Attributes: practitionerID, fullName, specialtyAppointment Class [FR-2, FR-4]
+- Attributes: appointmentID, dateTime, statusAppointmentManager Class [FR-2, FR-4]
+- Attributes: appointmentList, systemRulesNotification Engine Class [FR-4]
+- Attributes: notificationType, recipientID
+
+- Patient schedules Appointment [1 to 0..*] [FR-1, FR-2]
+- Practitioner conducts Appointment [1 to 0..*] [FR-2, FR-3]
+- AppointmentManager controls Appointment [1 to 1..*] [FR-2]
+
+Part F
+- Patient schedules Appointment: Accepted.
+
+Part G
+class Patient:
+    def __init__(self, patient_id: str, full_name: str, contact_info: str):
+        self.patient_id = patient_id
+        self.patient_full_name = patient_full_name
+        self.patient_contact_info = patient_contact_info
+
+    def request_appointment(self):
+
+    def view_history(self):
+
+
+class Practitioner:
+    def __init__(self, practitioner_id: str, full_name: str, specialty: str):
+        self.prac_id = prac_id
+        self.prac_full_name = prac_full_name
+        self.specialty = specialty
+
+    def set_availability(self):
+
+    def view_schedule(self):
+
+class Appointment:
+    def __init__(self, appointment_id: str, date_time: str, status: str = "Scheduled"):
+        self.appointment_id = appointment_id
+        self.date_time = date_time
+        self.status = status
+
+    def update_status(self, new_status: str):
+
+    def cancel(self):
+
+Part H
+
+Reflection
+- Defining multiplicity was the harest for me
+- "Attributes: appointmentList, systemRulesNotification Engine Class [FR-4] (Over-designed suggestion)"
+- I personally think it should be combine into 1 class
