@@ -1,0 +1,23 @@
+1.
+Patient Class --> Patient (Python class) --> Yes --> Includes attributes (patient_id, etc.) and methods (request_appointment, view_history)
+Practitioner Class --> Practitioner (Python class) --> Yes --> Includes attributes (practitioner_id, etc.)
+Appointment Class --> Appointment (Python class) --> Yes --> Includes attributes and status management methods.
+AppointmentStatus --> AppointmentStatus (Enum) --> Yes --> Defines SCHEDULED, COMPLETED, CANCELLED
+
+2.
+Patient --> ID and Full Name must not be empty --> Protected via if validation in __init__
+Appointment --> Cannot modify status or re-cancel once an appointment is CANCELLED --> Protected via guard clauses in cancel()
+
+3.
+Appointment and Patient --> Composition/association --> An appointment has a patient associated with it.
+Appointment and Practitioner --> Composition/association --> An appointment has a practitioner assigned to it.
+
+4.
+AI Contribution --> Appointment class implementation and AppointmentStatus enum
+
+Decision --> Accepted with added association attributes and state guard rules.
+Reason --> Ensures separation of concerns and data integrity.
+Verification --> Passed manual checks and edge-case testing.
+
+5.
+Nothing

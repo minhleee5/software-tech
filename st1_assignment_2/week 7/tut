@@ -1,0 +1,48 @@
+Activity 1
+- Patient
++ Protected state: Patient_ID, Pateint_full_Name, Patient_contact
++ Public operations: request_appointment(), view_history()
+
+-Practitioner
++ Protected state: Practitioner_ID, Practitioner_full_Name, Speciality
++ Public operations: set availability, view schedule
+
+- Appointment
++ Protected state: Status invariant
++ Public operations: cancel(), update_status()
+
+Activity 2
+- Composition: because appointment has a patient associated with it
+- Composition: because appointment has a practitioner assigned to it
+- Inheritance: because doctor is a type of practitioner
+- Composition: because the clinic contains and manages appointment
+
+Activity 3
+- Patient
+- Patient
+- No, because domain class shouldn't handle database operations.
+- No, domain class should be the one deciding
+
+Activity 4
+Problem: Public status mutation.
+
+Correction: Make status private and use methods like cancel() to protect state.
+
+Problem: SQL inside cancel().
+
+Correction: Remove database logic from the domain model to maintain separation of concerns.
+
+Problem: NotificationManager dependency.
+
+Correction: Remove direct service dependencies from the domain class.
+
+Problem: Inheritance from PatientRecord.
+
+Correction: Use composition/association instead, as an appointment has a record, it is not a record.
+
+Problem: Lack of transition guard rails.
+
+Correction: Add validation to prevent illegal state changes (e.g., cancelling an already cancelled appointment).
+
+Exiting question
+Because it does not guarantees proper encapsulation
